@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly sinh vien</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1> Quản Lý Sinh Viên</h1>
+
+    <div class="top-bar">
+        <form class="search-form" th:action="@{/students}" method="get">
+            <input type="text" name="keyword" placeholder="Tìm theo tên, MSSV, lớp..." th:value="${keyword}">
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            <a th:href="@{/students}" class="btn" style="background:#ecf0f1;color:#333;">Xóa lọc</a>
+        </form>
+        <a th:href="@{/students/new}" class="btn btn-success">+ Thêm sinh viên</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>MSSV</th>
+            <th>Họ tên</th>
+            <th>Ngày sinh</th>
+            <th>Lớp</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Thao tác</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(students)}">
+            <td colspan="7" class="empty-msg">Không tìm thấy sinh viên nào.</td>
+        </tr>
+        <tr th:each="sv : ${students}">
+            <td th:text="${sv.mssv}"></td>
+            <td th:text="${sv.hoTen}"></td>
+            <td th:text="${sv.ngaySinh}"></td>
+            <td th:text="${sv.lop}"></td>
+            <td th:text="${sv.email}"></td>
+            <td th:text="${sv.sdt}"></td>
+            <td class="actions">
+                <a th:href="@{/students/edit/{id}(id=${sv.id})}" class="btn btn-warning">Sửa</a>
+                <a th:href="@{/students/delete/{id}(id=${sv.id})}" class="btn btn-danger"
+                   onclick="return confirm('Bạn có chắc muốn xóa sinh viên này?');">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

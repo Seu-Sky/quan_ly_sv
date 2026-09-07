@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form sinh viên</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${formTitle}">Thêm sinh viên</h1>
+
+    <form th:action="@{/students/save}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <div class="form-group">
+            <label>Mã số sinh viên (MSSV)</label>
+            <input type="text" th:field="*{mssv}" placeholder="VD: SV0001">
+            <span class="error" th:if="${#fields.hasErrors('mssv')}" th:errors="*{mssv}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" th:field="*{hoTen}" placeholder="VD: Nguyễn Văn A">
+            <span class="error" th:if="${#fields.hasErrors('hoTen')}" th:errors="*{hoTen}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Ngày sinh</label>
+            <input type="text" th:field="*{ngaySinh}" placeholder="dd/MM/yyyy">
+        </div>
+
+        <div class="form-group">
+            <label>Lớp</label>
+            <input type="text" th:field="*{lop}" placeholder="VD: CNTT01">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" th:field="*{email}" placeholder="VD: [email protected]">
+            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" th:field="*{sdt}" placeholder="VD: 0912345678">
+            <span class="error" th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}"></span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a th:href="@{/students}" class="btn" style="background:#ecf0f1;color:#333;">Hủy</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

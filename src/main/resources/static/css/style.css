@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 40px 20px;
+    color: #2c3e50;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px 60px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a5276;
+    margin-bottom: 35px;
+    font-size: 36px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
+    padding: 14px 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 260px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #21618c;
+}
+
+.btn-success {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #1e8449;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #d68910;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 20px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 17px;
+}
+
+th {
+    background-color: #1a5276;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #f1f8ff;
+}
+
+.actions a {
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 18px;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+    display: block;
+}
+
+.empty-msg {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 18px;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
