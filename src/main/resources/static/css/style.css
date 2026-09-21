@@ -1,127 +1,55 @@
-* {
-    box-sizing: border-box;
-}
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f4f6f9;
-    margin: 0;
-    padding: 40px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #2c3e50;
+    margin: 0;
 }
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #212529; /* Màu nền menu trái giống thầy */
+}
+
+.sidebar a {
+    color: #c2c7d0;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #494e53;
+    color: white;
+    border-radius: 5px;
+}
+
+.sidebar i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+/* Đổi màu chữ nút sửa cho nổi bật trên nền vàng */
+.btn-warning {
+    color: white !important; 
+}
+
+
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 800px; /* Thu gọn form lại cho đẹp */
+    margin: 40px auto;
     background: #fff;
-    padding: 50px 60px;
+    padding: 40px 50px;
     border-radius: 14px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #1a5276;
-    margin-bottom: 35px;
-    font-size: 36px;
-}
-
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.search-form {
-    display: flex;
-    gap: 10px;
-}
-
-input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
-    padding: 14px 18px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    min-width: 260px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 14px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btn-primary {
-    background-color: #2980b9;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #21618c;
-}
-
-.btn-success {
-    background-color: #27ae60;
-    color: #fff;
-}
-
-.btn-success:hover {
-    background-color: #1e8449;
-}
-
-.btn-warning {
-    background-color: #f39c12;
-    color: #fff;
-}
-
-.btn-warning:hover {
-    background-color: #d68910;
-}
-
-.btn-danger {
-    background-color: #e74c3c;
-    color: #fff;
-}
-
-.btn-danger:hover {
-    background-color: #c0392b;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 20px 18px;
-    text-align: left;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 17px;
-}
-
-th {
-    background-color: #1a5276;
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-tr:hover {
-    background-color: #f1f8ff;
-}
-
-.actions a {
-    margin-right: 10px;
 }
 
 .form-group {
@@ -138,21 +66,18 @@ tr:hover {
 .form-group input {
     width: 100%;
     font-size: 16px;
-    padding: 14px 18px;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Sửa lỗi ô input tràn viền */
 }
 
+/* Bắt lỗi đỏ khi nhập sai dữ liệu */
 .error {
     color: #e74c3c;
     font-size: 14px;
     margin-top: 6px;
     display: block;
-}
-
-.empty-msg {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-    font-size: 18px;
 }
 
 .form-actions {
